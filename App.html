@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loyalty Card App</title>
+    <link rel="stylesheet" href="App.css">
+</head>
+<body>
+    <div class="app">
+        <header>
+            <h1>Rewards</h1>
+            <span class="info-icon">ⓘ</span>
+        </header>
+        <main>
+            <div class="balance">
+                <h2>R43.57</h2>
+                <p>4,357 points</p>
+            </div>
+            <button class="voucher-btn">Vouchers ></button>
+            <div class="card-section">
+                <h3>Select Card</h3>
+                <div class="card-scroll">
+                    <div class="card visa" data-card="visa">
+                        <div class="card-content">
+                            <div class="card-chip"></div>
+                            <div class="card-number">**** **** **** 1234</div>
+                            <div class="card-name">JOHN DOE</div>
+                        </div>
+                    </div>
+                    <div class="card mastercard" data-card="mastercard">
+                        <div class="card-content">
+                            <div class="card-chip"></div>
+                            <div class="card-number">**** **** **** 5678</div>
+                            <div class="card-name">JANE SMITH</div>
+                        </div>
+                    </div>
+                    <div class="card amex" data-card="amex">
+                        <div class="card-content">
+                            <div class="card-chip"></div>
+                            <div class="card-number">**** ****** 90123</div>
+                            <div class="card-name">ALEX JOHNSON</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="placeholder"></div>
+            <button class="receipt-btn">
+                <span class="icon">📄</span>
+                Digital Receipt
+            </button>
+        </main>
+        <nav>
+            <button class="active">🏠</button>
+            <button>🏷️</button>
+            <button>🎁</button>
+            <button>👤</button>
+        </nav>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
