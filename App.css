@@ -87,7 +87,10 @@ h2 {
   overflow-x: auto;
   padding: 20px 0;
   gap: 15px;
-  justify-content: center; /* Center cards */
+  justify-content: flex-start; /* Align cards to start */
+  padding-left: 20px;
+  padding-right: 20px;
+  transition: transform 0.3s ease;
 }
 
 .card-scroll::-webkit-scrollbar {
@@ -104,6 +107,22 @@ h2 {
   font-family: 'Courier New', monospace;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
+  cursor: pointer; /* Add pointer cursor */
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+
+.card:not(.selected) {
+  transform: scale(0.9); /* Shrink the non-selected cards */
+  opacity: 0.6; /* Dim the non-selected cards */
+}
+
+.card.selected {
+  transform: scale(1.1); /* Enlarge the selected card */
+  z-index: 1; /* Ensure the selected card is on top */
 }
 
 .card-content {
@@ -111,7 +130,8 @@ h2 {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   padding: 10px;
 }
 
@@ -132,11 +152,42 @@ h2 {
 }
 
 .card-chip {
-  width: 30px;
-  height: 20px;
-  background: linear-gradient(45deg, #bdbdbd, #f0f0f0);
-  border-radius: 3px;
+  width: 40px;
+  height: 30px;
+  background: #d4af37;
+  border-radius: 4px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
+
+.card-chip::before,
+.card-chip::after {
+  content: '';
+  width: 80%;
+  height: 2px;
+  background: #fff;
+  margin: 2px 0;
+}
+
+.card-chip-lines {
+  width: 80%;
+  height: 2px;
+  background: #fff;
+  margin: 2px 0;
+}
+
+.card-chip-lines:nth-child(1) { width: 60%; }
+.card-chip-lines:nth-child(2) { width: 80%; }
+.card-chip-lines:nth-child(3) { width: 100%; }
+.card-chip-lines:nth-child(4) { width: 80%; }
+.card-chip-lines:nth-child(5) { width: 60%; }
+
 
 .card-number {
   font-size: 12px;
@@ -185,4 +236,15 @@ nav button {
 
 nav button.active {
   color: #000;
+}
+
+.add-card {
+  background-color: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  color: #757575;
+  cursor: pointer;
+  border: 2px dashed #bdbdbd;
 }
